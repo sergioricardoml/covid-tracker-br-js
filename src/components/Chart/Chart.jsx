@@ -1,70 +1,98 @@
-import React, { useState, useEffect } from 'react';
-import { fetchDailyData } from '../../api';
-import { Line, Bar } from 'react-chartjs-2';
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
 
 import styles from './Chart.module.css';
 
-const Chart = ({ data: {confirmed, recovered, deaths }, country }) => {
-  const [dailyData, setDailyData] = useState([]);
-
-  useEffect(() => {
-    const fetchAPI = async () => {
-      setDailyData(await fetchDailyData());
-    }
-    
-    fetchAPI();
-  }, [])
+const Chart = ({ brData, currentUrl, ufData }) => {
+  const { pathname } = currentUrl;
   
-  const lineChart = (
-    dailyData.length
-      ? (
-        <Line 
-          data={{
-            labels: dailyData.map(({ date }) => date),
-            datasets: [{
-              data: dailyData.map(({ confirmed }) => confirmed),
-              label: 'Infected',
-              borderColor: '#3333ff',
-              fill: true,
-            }, {
-              data: dailyData.map(({ deaths }) => deaths),
-              label: 'Deaths',
-              borderColor: 'red',
-              backgroundColor: 'rgba(255, 0, 0, 0.5)',
-              fill: true,
-            }],
-          }}
-        />
-      ) : null
+  if (!ufData[0] || !brData) {
+    return true;
+  }
+  
+  const { brConfirmed, brRecovered, brDeaths, brDate } = brData;
+  const { ufConfirmed, ufRecovered, ufDeaths, ufDate } = ufData[0];
+
+  const barChartBrazil = (
+    brConfirmed ?
+      <Bar
+        height={400}
+        width={600}
+        data={{
+          labels: [`Números do COVID-19 no Brasil, última atualização às ${new Date(brDate).toLocaleTimeString()} do dia ${new Date(brDate).toLocaleDateString()}`],
+          datasets: [{
+            label: 'Infectados',
+            backgroundColor: ['rgba(62, 193, 65, 0.6)'],
+            borderWidth: 2,
+            borderColor: ['rgba(62, 193, 65, 0.6)'],
+            hoverBorderColor: ['rgba(62, 193, 65, 1)'],
+            data: [brConfirmed]
+          }, {
+            label: 'Recuperados',
+            backgroundColor: ['rgba(65, 62, 193, 0.6)'],
+            borderWidth: 2,
+            borderColor: ['rgba(65, 62, 193, 0.6)'],
+            hoverBorderColor: ['rgba(65, 62, 193, 1)'],
+            data: [brRecovered]
+          }, {
+            label: 'Mortos',
+            backgroundColor: ['rgba(193, 65, 62, 0.6)',],
+            borderWidth: 2,
+            borderColor: ['rgba(193, 65, 62, 0.6)'],
+            hoverBorderColor: ['rgba(193, 65, 62, 1)'],
+            data: [brDeaths]
+          }],
+        }}
+        option={{
+          legend: { display: false },
+          title: { display: true, text: `Current state in Brasil` },
+        }}
+      />
+    : null
   );
 
-  const barChart = (
-    confirmed
+  const barChartState = (
+    ufConfirmed
       ? (
-        <Bar 
-          data={{
-            labels: ['Infected', 'Recovered', 'Deaths'],
-            datasets: [{
-              label: 'People',
-              backgroundColor: [
-                'rgba(0, 0, 255, 0.5)',
-                'rgba(0, 255, 0, 0.5)',
-                'rgba(255, 0, 0, 0.5)',
-              ],
-              data: [confirmed.value, recovered.value, deaths.value]
-            }],
-          }}
-          option={{
-            legend: { display: false },
-            title: { display: true, text: `Current state in ${country}` },
-          }}
-        />
+      <Bar
+        height={300}
+        width={500}
+        data={{
+          labels: [`Números do COVID-19, última atualização às ${new Date(ufDate).toLocaleTimeString()} do dia ${new Date(ufDate).toLocaleDateString()}`],
+          datasets: [{
+            label: 'Infectados',
+            backgroundColor: ['rgba(62, 193, 65, 0.5)'],
+            borderWidth: 2,
+            borderColor: ['rgba(62, 193, 65, 0.5)'],
+            hoverBorderColor: ['rgba(62, 193, 65, 1)'],
+            data: [ufConfirmed]
+          }, {
+            label: 'Recuperados',
+            backgroundColor: ['rgba(65, 62, 193, 0.5)'],
+            borderWidth: 2,
+            borderColor: ['rgba(65, 62, 193, 0.5)'],
+            hoverBorderColor: ['rgba(65, 62, 193, 1)'],
+            data: [ufRecovered]
+          }, {
+            label: 'Mortos',
+            backgroundColor: ['rgba(193, 65, 62, 0.5)',],
+            borderWidth: 2,
+            borderColor: ['rgba(193, 65, 62, 0.5)'],
+            hoverBorderColor: ['rgba(193, 65, 62, 1)'],
+            data: [ufDeaths]
+          }],
+        }}
+        option={{
+          legend: { display: false },
+          title: { display: true, text: `Current state in Brasil` },
+        }}
+      />
       ) : null
   );
 
   return (
     <div className={styles.container}>
-      {country ? barChart : lineChart }
+      {pathname === "/estados" ? barChartState : barChartBrazil}
     </div>
   )
 }

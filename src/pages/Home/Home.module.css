@@ -3,6 +3,7 @@ body {
 }
 
 .container {
+  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,6 +11,7 @@ body {
 }
 
 .image {
+  /* border: 1px solid red; */
   width: 370px;
   margin-top: 50px;
 }

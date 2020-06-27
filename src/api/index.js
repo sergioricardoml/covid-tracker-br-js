@@ -1,46 +1,36 @@
 import axios from 'axios';
 
-const url = 'https://covid19.mathdro.id/api';
+const url = 'https://covid19.mathdro.id/api/countries/brazil';
 
-export const fetchData = async (country) => {
-  let changeableUrl = url;
-
-  if (country) {
-    changeableUrl = `${url}/countries/${country}`;
-  }
-
+export const fetchDataBrazil = async () => {
   try {
-    const { data: { confirmed, recovered, deaths, lastUpdate } } = await axios.get(changeableUrl);
+    const { data: { 
+          confirmed : { value: brConfirmed }, 
+          recovered : { value: brRecovered },
+          deaths : { value: brDeaths },
+          lastUpdate : brDate }} = await axios.get(url);
 
-    return { confirmed, recovered, deaths, lastUpdate };
+    return { brConfirmed, brRecovered, brDeaths, brDate };
   } catch (error) {
     console.log(error);
   }
 }
 
-export const fetchDailyData = async () => {
+export const fetchStateData = async (estado) => {
   try {
-    const { data } = await axios.get(`${url}/daily`);
+    const { data } = await axios.get(`${url}/confirmed`);
 
-    const modifiedData = data.map((dailyData) => ({
-      confirmed: dailyData.confirmed.total,
-      deaths: dailyData.deaths.total,
-      date: dailyData.reportDate,
+    const modifiedData = data.map((data) => ({
+      uf: data.provinceState.split(" ").join("").toLowerCase(),
+      ufConfirmed: data.confirmed,
+      ufRecovered: data.recovered,
+      ufDeaths: data.deaths,
+      ufDate: data.lastUpdate,
     }));
 
-    return modifiedData;
-
-  } catch (error) {
+    const stateData = modifiedData.filter(uf => uf.uf === estado);
     
-  }
-}
-
-export const fetchCountries = async () => {
-  try {
-    const { data: { countries } } = await axios.get(`${url}/countries`);
-
-    return countries.map(country => country.name);
-    
+    return stateData;
   } catch (error) {
     console.log(error);
   }

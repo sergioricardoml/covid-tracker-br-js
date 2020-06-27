@@ -1,50 +1,13 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes';
 
-import { Cards, Chart, CountryPicker } from './components';
-import styles from './App.module.css';
-import { fetchData } from './api';
-
-import coronaImage from './assets/corona.png';
-
-// function App() {
-//   return (
-//     <h1>Hello World</h1>
-//   );
-// }
-
-class App extends React.Component {
-  state = {
-    data: {},
-    country: '',
-  }
-
-  async componentDidMount() {
-    const fetchedData = await fetchData();
-
-    this.setState({ data: fetchedData });
-  }
-
-  handleCountryChange = async (country) => {
-    const fetchedData = await fetchData(country);
-
-    this.setState({
-      data: fetchedData,
-      country,
-    });
-  }
-  
-  render() {
-    const { data, country } = this.state;
-
-    return (
-      <div className={styles.container}>
-        <img className={styles.image} src={coronaImage} alt="COVID-19" />
-        <Cards data={data}/>
-        <CountryPicker handleCountryChange={this.handleCountryChange} />
-        <Chart data={data} country={country}/>
-      </div>
-    )
-  }
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  );
 }
 
 export default App;
