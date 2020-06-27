@@ -63,41 +63,41 @@ a#pi {width: 83px; height: 124px; }
 
 /* Código pronto via http://css.spritegen.com (com alterações nos seletores) */
 
-a#pa:hover, a#pa:active, a#am:hover, a#am:active, a#mt:hover, a#mt:active, a#ba:hover, a#ba:active, a#ma:hover, a#ma:active,
-a#mg:hover, a#mg:active, a#to:hover, a#to:active, a#pi:hover, a#pi:active, a#go:hover, a#go:active, a#ms:hover, a#ms:active,
-a#rr:hover, a#rr:active, a#rs:hover, a#rs:active, a#ro:hover, a#ro:active, a#ap:hover, a#ap:active, a#sp:hover, a#sp:active,
-a#ce:hover, a#ce:active, a#pr:hover, a#pr:active, a#ac:hover, a#ac:active, a#sc:hover, a#sc:active, a#es:hover, a#es:active,
-a#rj:hover, a#rj:active, a#pb:hover, a#pb:active, a#pe:hover, a#pe:active, a#rn:hover, a#rn:active, a#se:hover, a#se:active,
-a#al:hover, a#al:active, a#df:hover, a#df:active
+a#pa:hover, a#pa:focus, a#am:hover, a#am:focus, a#mt:hover, a#mt:focus, a#ba:hover, a#ba:focus, a#ma:hover, a#ma:focus,
+a#mg:hover, a#mg:focus, a#to:hover, a#to:focus, a#pi:hover, a#pi:focus, a#go:hover, a#go:focus, a#ms:hover, a#ms:focus,
+a#rr:hover, a#rr:focus, a#rs:hover, a#rs:focus, a#ro:hover, a#ro:focus, a#ap:hover, a#ap:focus, a#sp:hover, a#sp:focus,
+a#ce:hover, a#ce:focus, a#pr:hover, a#pr:focus, a#ac:hover, a#ac:focus, a#sc:hover, a#sc:focus, a#es:hover, a#es:focus,
+a#rj:hover, a#rj:focus, a#pb:hover, a#pb:focus, a#pe:hover, a#pe:focus, a#rn:hover, a#rn:focus, a#se:hover, a#se:focus,
+a#al:hover, a#al:focus, a#df:hover, a#df:focus
 { display: block; background: url('../../assets/sprite.gif') no-repeat; }
 
-a#pa:hover, a#pa:active { background-position: -10px -0px; width: 188px; height: 187px; }
-a#am:hover, a#am:active { background-position: -10px -197px; width: 258px; height: 181px; }
-a#mt:hover, a#mt:active { background-position: -10px -388px; width: 166px; height: 161px; }
-a#ba:hover, a#ba:active { background-position: -10px -559px; width: 136px; height: 148px; }
-a#ma:hover, a#ma:active { background-position: -156px -559px; width: 102px; height: 139px; }
-a#mg:hover, a#mg:active { background-position: -10px -717px; width: 163px; height: 131px; }
-a#to:hover, a#to:active { background-position: -183px -717px; width: 74px; height: 125px; }
-a#pi:hover, a#pi:active { background-position: -10px -858px; width: 83px; height: 124px; }
-a#go:hover, a#go:active { background-position: -103px -858px; width: 108px; height: 108px; }
-a#ms:hover, a#ms:active { background-position: -103px -976px; width: 106px; height: 104px; }
-a#rr:hover, a#rr:active { background-position: -10px -992px; width: 87px; height: 103px; }
-a#rs:hover, a#rs:active { background-position: -107px -1090px; width: 116px; height: 101px; }
-a#ro:hover, a#ro:active { background-position: -10px -1201px; width: 104px; height: 87px; }
-a#ap:hover, a#ap:active { background-position: -10px -1105px; width: 73px; height: 85px; }
-a#sp:hover, a#sp:active { background-position: -124px -1201px; width: 131px; height: 84px; }
-a#ce:hover, a#ce:active { background-position: -186px -388px; width: 61px; height: 76px; }
-a#pr:hover, a#pr:active { background-position: -124px -1295px; width: 97px; height: 64px; }
-a#ac:hover, a#ac:active { background-position: -10px -1298px; width: 108px; height: 62px; }
-a#sc:hover, a#sc:active { background-position: -128px -1369px; width: 81px; height: 53px; }
-a#es:hover, a#es:active { background-position: -208px -0px; width: 33px; height: 51px; }
-a#rj:hover, a#rj:active { background-position: -186px -474px; width: 58px; height: 40px; }
-a#pb:hover, a#pb:active { background-position: -10px -1370px; width: 59px; height: 35px; }
-a#pe:hover, a#pe:active { background-position: -10px -1415px; width: 97px; height: 34px; }
-a#rn:hover, a#rn:active { background-position: -186px -524px; width: 53px; height: 33px; }
-a#se:hover, a#se:active { background-position: -208px -61px; width: 28px; height: 32px; }
-a#al:hover, a#al:active { background-position: -208px -103px; width: 46px; height: 27px; }
-a#df:hover, a#df:active { background-position: -208px -140px; width: 16px; height: 9px; }
+a#pa:hover, a#pa:focus { background-position: -10px -0px; width: 188px; height: 187px; }
+a#am:hover, a#am:focus { background-position: -10px -197px; width: 258px; height: 181px; }
+a#mt:hover, a#mt:focus { background-position: -10px -388px; width: 166px; height: 161px; }
+a#ba:hover, a#ba:focus { background-position: -10px -559px; width: 136px; height: 148px; }
+a#ma:hover, a#ma:focus { background-position: -156px -559px; width: 102px; height: 139px; }
+a#mg:hover, a#mg:focus { background-position: -10px -717px; width: 163px; height: 131px; }
+a#to:hover, a#to:focus { background-position: -183px -717px; width: 74px; height: 125px; }
+a#pi:hover, a#pi:focus { background-position: -10px -858px; width: 83px; height: 124px; }
+a#go:hover, a#go:focus { background-position: -103px -858px; width: 108px; height: 108px; }
+a#ms:hover, a#ms:focus { background-position: -103px -976px; width: 106px; height: 104px; }
+a#rr:hover, a#rr:focus { background-position: -10px -992px; width: 87px; height: 103px; }
+a#rs:hover, a#rs:focus { background-position: -107px -1090px; width: 116px; height: 101px; }
+a#ro:hover, a#ro:focus { background-position: -10px -1201px; width: 104px; height: 87px; }
+a#ap:hover, a#ap:focus { background-position: -10px -1105px; width: 73px; height: 85px; }
+a#sp:hover, a#sp:focus { background-position: -124px -1201px; width: 131px; height: 84px; }
+a#ce:hover, a#ce:focus { background-position: -186px -388px; width: 61px; height: 76px; }
+a#pr:hover, a#pr:focus { background-position: -124px -1295px; width: 97px; height: 64px; }
+a#ac:hover, a#ac:focus { background-position: -10px -1298px; width: 108px; height: 62px; }
+a#sc:hover, a#sc:focus { background-position: -128px -1369px; width: 81px; height: 53px; }
+a#es:hover, a#es:focus { background-position: -208px -0px; width: 33px; height: 51px; }
+a#rj:hover, a#rj:focus { background-position: -186px -474px; width: 58px; height: 40px; }
+a#pb:hover, a#pb:focus { background-position: -10px -1370px; width: 59px; height: 35px; }
+a#pe:hover, a#pe:focus { background-position: -10px -1415px; width: 97px; height: 34px; }
+a#rn:hover, a#rn:focus { background-position: -186px -524px; width: 53px; height: 33px; }
+a#se:hover, a#se:focus { background-position: -208px -61px; width: 28px; height: 32px; }
+a#al:hover, a#al:focus { background-position: -208px -103px; width: 46px; height: 27px; }
+a#df:hover, a#df:focus { background-position: -208px -140px; width: 16px; height: 9px; }
 
 /* Fim sprite */
 

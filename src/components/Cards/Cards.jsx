@@ -64,7 +64,7 @@ const Cards = ({ brData, currentUrl, ufData }) => {
               <Typography variant="h5">
                 <CountUp start={0} end={ufConfirmed} duration={2.5} separator="," />
               </Typography>
-              <Typography color="textSecondary">{new Date().toLocaleString()}</Typography>
+              <Typography color="textSecondary">{new Date(ufDate).toLocaleString()}</Typography>
               <Typography variant="body2">Número de casos ativos do COVID-19</Typography>
             </CardContent>
           </Grid>
@@ -74,7 +74,7 @@ const Cards = ({ brData, currentUrl, ufData }) => {
               <Typography variant="h5">
                 <CountUp start={0} end={ufRecovered} duration={2.5} separator="," />
               </Typography>
-              <Typography color="textSecondary">{new Date().toLocaleString()}</Typography>
+              <Typography color="textSecondary">{new Date(ufDate).toLocaleString()}</Typography>
               <Typography variant="body2">Número de recuperações do COVID-19</Typography>
             </CardContent>
           </Grid>
