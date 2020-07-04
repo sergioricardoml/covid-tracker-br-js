@@ -3,7 +3,12 @@
   <img alt="Covid Tracker BR" src="https://github.com/sergioricardoml/covid-tracker-br/blob/master/img-github/covid-tracker.png?raw=true" width="250px">
 </h1>
 
-<h4 align="center">Projeto para acompanhar os números atualizados da pandemia da Covid-19 no Brasil e seus Estados.</h4>
+<h4 align="center">
+  Projeto para acompanhar os números atualizados da pandemia da Covid-19 no Brasil e seus Estados.
+  <br />
+  <br />
+  https://covid-tracker-br.netlify.app/
+</h4>
 
 <p align="center">
   <img alt="Linguagem mais usada Javascript" src="https://img.shields.io/github/languages/top/sergioricardoml/covid-tracker-br?style=flat">
