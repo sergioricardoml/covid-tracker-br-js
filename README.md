@@ -3,7 +3,7 @@
   <img alt="Covid Tracker BR" src="https://github.com/sergioricardoml/covid-tracker-br/blob/master/img-github/covid-tracker.png?raw=true" width="250px">
 </h1>
 
-<h4 align="center">Projeto para acompanhar os números atualizados da pandemia do Covid-19 no Brasil e seus Estados.</h4>
+<h4 align="center">Projeto para acompanhar os números atualizados da pandemia da Covid-19 no Brasil e seus Estados.</h4>
 
 <p align="center">
   <img alt="Linguagem mais usada Javascript" src="https://img.shields.io/github/languages/top/sergioricardoml/covid-tracker-br?style=flat">
@@ -37,10 +37,10 @@ Para clonar e executar a aplicação é necessário [Git](https://git-scm.com) e
 
 ```bash
 # Clone o repositório
-$ git clone https://github.com/sergioricardoml/covid-tracker-br
+$ git clone https://github.com/sergioricardoml/covid-tracker-br-js.git
 
 # Entre no repositório
-$ cd covid-tracker-br
+$ cd covid-tracker-br-js
 
 # Instale as dependências
 $ yarn
@@ -54,11 +54,12 @@ $ yarn start
 $ npm start
 ```
 ## Tecnologias:
-- **Refatoração do código para Typescript em andamento...**
 - [ReactJS](https://pt-br.reactjs.org/)
 - [Axios](https://github.com/axios/axios)
 - [Material-UI](https://material-ui.com/pt/)
 - [Chart.js](https://www.chartjs.org/)
+
+**A versão em React com Typescript pode ser encontrada no [link](https://github.com/sergioricardoml/covid-tracker-br-ts).**
 
 ## Créditos:
 - Aplicação construída com utilização de [API](https://covid19.mathdro.id/api/) pública;
